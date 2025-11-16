@@ -1,0 +1,9 @@
+/export/
+/.vscode/
+/.zed/
+*.dll
+*.exe
+*.pdb
+*.lib
+*.so
+*.bin
