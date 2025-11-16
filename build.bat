@@ -53,7 +53,7 @@ REM 1. Build voidgen library
 REM ===============================
 echo Building Voidgen library (%BUILD_TYPE%, %LIB_MODE%)...
 
-odin build voidgen\voidgen.odin -file %LIB_BUILD_MODE% %FLAGS% -out:%OUT_DIR%\voidgen%LIB_EXT%
+odin build voidgen -file %LIB_BUILD_MODE% %FLAGS% -out:%OUT_DIR%\voidgen%LIB_EXT%
 if errorlevel 1 (
     echo Failed to build voidgen library!
     exit /b 1
@@ -64,7 +64,7 @@ REM 2. Build application linking voidgen
 REM ===============================
 echo Building application (%BUILD_TYPE%)...
 
-odin build app\main.odin -file -build-mode:exe %FLAGS% %LIB_LINK_EXT% -out:%OUT_DIR%\voidgen_app.exe
+odin build app -file -build-mode:exe %FLAGS% %LIB_LINK_EXT% -out:%OUT_DIR%\voidgen_app.exe
 if errorlevel 1 (
     echo Failed to build application!
     exit /b 1
@@ -80,4 +80,3 @@ if /i "%LIB_MODE%"=="dynamic" (
 
 echo.
 echo Build finished successfully! Output in %OUT_DIR%
-pause
